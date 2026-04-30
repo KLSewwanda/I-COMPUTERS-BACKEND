@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import userRouter from './routers/userRouter.js'
 import productRouter from './routers/productRouter.js'
 import dotenv from 'dotenv'
+import cors from 'cors'
 
 dotenv.config()
 
@@ -24,6 +25,7 @@ mongoose.connect(mongoDBURI).then(
 )
 
 const app = express()
+app.use(cors())
 
 app.use( express.json() )
 
