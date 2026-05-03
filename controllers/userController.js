@@ -72,10 +72,13 @@ export async function loginUser(req, res) {
                     image : user.image
                 },
                 
-                process.env.JWT_SECRET_KEY
+                process.env.JWT_SECRET_KEY,
+                {
+                    expiresIn : "24h"
+                }
             )
 
-            res.json({message : "Login successful", token : token})
+            res.json({message : "Login successful", token : token , isAdmin : user.isAdmin})
 
         }else{
 

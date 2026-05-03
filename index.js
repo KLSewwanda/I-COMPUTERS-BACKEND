@@ -32,8 +32,8 @@ app.use( express.json() )
 app.use(authenticate)
 
 
-app.use("/users",userRouter)
-app.use("/products",productRouter)
+app.use("/api/users",userRouter)
+app.use("/api/products",productRouter)
 
 app.listen(
     3000 ,
