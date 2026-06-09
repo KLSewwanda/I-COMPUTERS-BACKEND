@@ -10,6 +10,7 @@ dotenv.config()
 import dns from "node:dns"
 
 import authenticate from './middlewares/authenticate.js'
+import orderRouter from './routers/orderRouter.js'
 
 //test
 
@@ -34,6 +35,7 @@ app.use(authenticate)
 
 app.use("/api/users",userRouter)
 app.use("/api/products",productRouter)
+app.use("/api/orders",orderRouter)
 
 app.listen(
     3000 ,
